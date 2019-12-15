@@ -1,7 +1,8 @@
 require("dotenv").config();
 var keys = require("./keys.js");
 var fs = require('fs');
-var dotenv = require('dotenv');
+var spotify = require('node-spotify-api')
+var dotenv = require('dotenv').config();
 var moment = require('moment');
 var axios = require('axios')
 
@@ -34,6 +35,30 @@ switch (process.argv[2]) {
 
         break;
     case 'spotify-this-song':
+        var spot = new spotify({
+            id: keys.spotify.id,
+            secret: keys.spotify.secret
+        });
+        var [node, file, command, ...song] = process.argv;
+        if (song.length === 0) {
+            song = "The Sign"
+        }
+
+        spot.search({
+            type: 'track', query: song
+        }, function (err, data) {
+            if (err) {
+                console.log('Error occurred: ' + err);
+            }
+            console.log(
+`Spotify Top Search Results for keyword(s): ${song})
+Song name: ${data.tracks.items[0].name}
+Artist(s): ${data.tracks.items[0].album.artists[0].name}
+Album name: ${data.tracks.items[0].album.name}
+Song preview link: ${data.tracks.items[0].external_urls.spotify}`)
+
+
+        })
         break;
     case 'movie-this':
         break;
