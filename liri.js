@@ -14,7 +14,7 @@ function band(input) {
     if (input !== '') {
         artist = input.slice(1,-1);
     } 
-    console.log(artist)
+    
     if (artistArr.length > 0){
         artist = artistArr.join('+')
     }
@@ -67,12 +67,14 @@ function songify(input) {
     if (songArr.length > 0){
         song = songArr.join('+')
     }
+    
     spot.search({
         type: 'track', query: song
     }, function (err, data) {
         if (err) {
             console.log('Error occurred: ' + err);
         }
+        
         console.log(
             `
 Spotify Top Search Results for keyword(s): ${song}
@@ -138,9 +140,9 @@ switch (process.argv[2]) {
             };
             var datArray = data.split(',');
             var command = datArray[0];
-            console.log(command)
+            
             var input = datArray[1];
-            console.log(input)
+            
             switch (command) {
                 case 'concert-this':
                     band(input);
