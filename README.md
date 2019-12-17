@@ -36,7 +36,7 @@ SPOTIFY_SECRET= Spotify_Secret_here
 }
 ```
 
-To obtain these keys, the user can visit:
+To obtain these keys, the user can visit
 [Spotify](https://developer.spotify.com/my-applications/#!/) and login or create an account. Register a new application and you will be presented with your Spotify ID and Spotify Secret. Save them as *const* variables in your .env file.
 
 Once you've done this, you're ready to start using the app!
