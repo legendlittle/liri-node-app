@@ -1,4 +1,4 @@
-# LIRI - A Language Interpretation and Recognition Interfact: a command line Node app 
+# LIRI - A Language Interpretation and Recognition Interface: a command line Node app 
 
 ## Project Overview
 The LIRI app is a project that entails retrieving data from APIs about songs, bands, and concerts, using the user's command line inputs.
