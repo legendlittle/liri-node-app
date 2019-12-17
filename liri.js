@@ -8,23 +8,22 @@ var axios = require('axios')
 
 function band(input) {
     var [nodey, filey, commando, ...artistArr] = process.argv;
-    if(artistArr.length === 0){
+    if (artistArr.length === 0) {
         artist = "Taylor Swift"
     }
-    if (input !== '') {
-        artist = input.slice(1,-1);
-    } 
-    
-    if (artistArr.length > 0){
+    if (input !== '' && input[0] === '"') {
+        artist = input.slice(1, -1);
+    }
+
+    if (artistArr.length > 0) {
         artist = artistArr.join('+')
     }
     var bandURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
-    console.log(bandURL)
     axios.get(bandURL).then(function (response) {
-        if(response.data.length === 0){
+        if (response.data.length === 0) {
             console.log(`No results were found for ${artist}.`)
         }
-        
+
         for (var i = 0; i < response.data.length; i++) {
             var time = moment(response.data[i].datetime)
             var eventTime = moment(time.month() + '/' + time.date() + '/' + time.year()).format('MM/DD/YYYY')
@@ -45,7 +44,7 @@ Date of Event: ${eventTime}
 ====================================================================================================================================`)
         }
 
-    }).catch(function(error){
+    }).catch(function (error) {
         console.log(error)
     })
 }
@@ -64,17 +63,17 @@ function songify(input) {
     if (input !== '') {
         song = input;
     }
-    if (songArr.length > 0){
+    if (songArr.length > 0) {
         song = songArr.join('+')
     }
-    
+
     spot.search({
         type: 'track', query: song
     }, function (err, data) {
         if (err) {
             console.log('Error occurred: ' + err);
         }
-        
+
         console.log(
             `
 Spotify Top Search Results for keyword(s): ${song}
@@ -94,13 +93,13 @@ function moviee(input) {
     if (movieArr.length === 0) {
         movie = 'Mr. Nobody'
     }
-    
+
     if (input !== '') {
         movie = input;
     }
     if (movieArr.length > 0) {
         movie = movieArr.join('+')
-    } 
+    }
     var movieURL = 'http://www.omdbapi.com/?t=' + movie + '&y=&plot=short&apikey=trilogy'
 
     axios.get(movieURL).then(function (response) {
@@ -140,9 +139,9 @@ switch (process.argv[2]) {
             };
             var datArray = data.split(',');
             var command = datArray[0];
-            
+
             var input = datArray[1];
-            
+
             switch (command) {
                 case 'concert-this':
                     band(input);

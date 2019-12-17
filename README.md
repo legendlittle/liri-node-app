@@ -18,6 +18,8 @@ The app is meant to handle any valid user input and then display the correct ret
 4. A random.txt file will be used to test the functions written in the liri.js file; sample text would be a command and a band name.
 
 ## Running the App
+You will need Node.js to run this app. You can download [Node here](https://nodejs.org/en/download/).
+
 In order to run the app, you will need to download the following files: keys.js, liri.js, random.txt, and package.json.
 
 After having these files, make sure they are in the same folder and then, in your command line, run the following command to install the packages used in this app:
