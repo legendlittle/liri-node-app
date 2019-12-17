@@ -65,7 +65,7 @@ fs.writeFile("random.txt", "command_name, search_term", function(err){
 `
 ## Screenshots of Outputs from different Commands
 
-![concert-this Taylor Swift](/images/concert-ts.jpg)
+<img src="/images/concert-ts.jpg" width = "200")>
 ![concert-this](/images/concert-no-show.jpg)
 ![movie-this inception](/images/movie-inception.jpg)
 ![movie-this](/images/movie-none.jpg)
