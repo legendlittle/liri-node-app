@@ -1,4 +1,4 @@
-# LIRI - A Language Interpretation and Recognition command line Node app 
+# LIRI - A Language Interpretation and Recognition Interfact: a command line Node app 
 
 ## Project Overview
 The LIRI app is a project that entails retrieving data from APIs about songs, bands, and concerts, using the user's command line inputs.
@@ -17,14 +17,51 @@ The app is meant to handle any valid user input and then display the correct ret
     - *do-what-it-says* - this function will read the text in the **random.txt** file and execute the given command (which will be one of the three commands above) 
 4. A random.txt file will be used to test the functions written in the liri.js file; sample text would be a command and a band name.
 
-`{js}
-//Example Call in Command Line:
+## Running the App
+In order to run the app, you will need to download the following files: keys.js, liri.js, random.txt, and package.json.
+
+After having these files, make sure they are in the same folder and then, in your command line, run the following command to install the packages used in this app:
+`
+npm i 
+`
+After installing the necessary packages, please create a .env file and save it in the same folder as the other files. In here, the user will place their Spotify ID and Spotify Secret.
+
+```js{
+# Spotify API keys
+
+SPOTIFY_ID = Spotify_ID_here
+SPOTIFY_SECRET= Spotify_Secret_here
+}
+```
+
+To obtain these keys, the user can visit:
+[Spotify](https://developer.spotify.com/my-applications/#!/) and login or create an account. Register a new application and you will be presented with your Spotify ID and Spotify Secret. Save them as *const* variables in your .env file.
+
+Once you've done this, you're ready to start using the app!
+
+Open the command line and navigate to the directory that all of the app files are in and begin typing commands. 
+
+### Example Calls in Command Line: 
+`
 node liri.js movie-this Lion King
-//Or
-node liri.js concert-this Taylor Swift
+`
+This will return information about the movie Lion King!
+
+`
+node liri.js do-what-it-says
+`
+This will read the command and search term written in the random.txt file. You can open the text file and manually change it to any of the valid commands, along with a valid search term separated by a comma and a space. 
+
+Alternatively, you can add this code before the do-what-it-says function is called to alter the random.txt file, replacing *command_name* with a valid command and *search_term* with the desired search term:
+
+`
+fs.writeFile("random.txt", "command_name, search_term", function(err){
+    if(err){
+       return console.log(err)
+    }
+})
 `
 
---- 
 ## Languages Used
 1. Node.js
 2. Javascript
