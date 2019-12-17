@@ -65,14 +65,14 @@ fs.writeFile("random.txt", "command_name, search_term", function(err){
 `
 ## Screenshots of Outputs from different Commands
 
-![concert-this Taylor Swift](/images/concert-ts.jpg)
-![concert-this](/images/concert-no-show.jpg)
-![movie-this inception](/images/movie-inception.jpg)
-![movie-this](/images/movie-none.jpg)
-![spotify-this-song Galway Girl](/images/song-gg.jpg)
-![do-what-it-says concert-this](/images/do-it-concert.jpg)
-![do-what-it-says spotify-this-song](/images/do-it-song.jpg)
-![do-what-it-says movie-this](/images/do-it-movie.jpg)
+![concert-this Taylor Swift](/images/concert-ts.jpg =100x100)
+![concert-this](/images/concert-no-show.jpg =100x100)
+![movie-this inception](/images/movie-inception.jpg =100x100)
+![movie-this](/images/movie-none.jpg =100x100)
+![spotify-this-song Galway Girl](/images/song-gg.jpg =100x100)
+![do-what-it-says concert-this](/images/do-it-concert.jpg =100x100)
+![do-what-it-says spotify-this-song](/images/do-it-song.jpg =100x100)
+![do-what-it-says movie-this](/images/do-it-movie.jpg =100x100)
 
 ## Languages Used
 1. Node.js
